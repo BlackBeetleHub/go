@@ -826,7 +826,8 @@ func (e ThresholdIndexes) String() string {
 //        ACCOUNT = 0,
 //        TRUSTLINE = 1,
 //        OFFER = 2,
-//        DATA = 3
+//        DATA = 3,
+//    	ALIAS = 4
 //    };
 //
 type LedgerEntryType int32
@@ -836,6 +837,7 @@ const (
 	LedgerEntryTypeTrustline LedgerEntryType = 1
 	LedgerEntryTypeOffer     LedgerEntryType = 2
 	LedgerEntryTypeData      LedgerEntryType = 3
+	LedgerEntryTypeAlias     LedgerEntryType = 4
 )
 
 var ledgerEntryTypeMap = map[int32]string{
@@ -843,6 +845,7 @@ var ledgerEntryTypeMap = map[int32]string{
 	1: "LedgerEntryTypeTrustline",
 	2: "LedgerEntryTypeOffer",
 	3: "LedgerEntryTypeData",
+	4: "LedgerEntryTypeAlias",
 }
 
 // ValidEnum validates a proposed value for this enum.  Implements
@@ -1200,6 +1203,62 @@ type OfferEntry struct {
 	Ext      OfferEntryExt
 }
 
+// AliasEntryExt is an XDR NestedUnion defines as:
+//
+//   union switch(int v){
+//    	case 0:
+//    		void;
+//    	}
+//
+type AliasEntryExt struct {
+	V int32
+}
+
+// SwitchFieldName returns the field name in which this union's
+// discriminant is stored
+func (u AliasEntryExt) SwitchFieldName() string {
+	return "V"
+}
+
+// ArmForSwitch returns which field name should be used for storing
+// the value for an instance of AliasEntryExt
+func (u AliasEntryExt) ArmForSwitch(sw int32) (string, bool) {
+	switch int32(sw) {
+	case 0:
+		return "", true
+	}
+	return "-", false
+}
+
+// NewAliasEntryExt creates a new  AliasEntryExt.
+func NewAliasEntryExt(v int32, value interface{}) (result AliasEntryExt, err error) {
+	result.V = v
+	switch int32(v) {
+	case 0:
+		// void
+	}
+	return
+}
+
+// AliasEntry is an XDR Struct defines as:
+//
+//   struct AliasEntry{
+//    	AccountID accountSourceID;
+//    	AccountID accountID;
+//
+//    	union switch(int v){
+//    	case 0:
+//    		void;
+//    	}
+//    	ext;
+//    };
+//
+type AliasEntry struct {
+	AccountSourceId AccountId
+	AccountId       AccountId
+	Ext             AliasEntryExt
+}
+
 // DataEntryExt is an XDR NestedUnion defines as:
 //
 //   union switch (int v)
@@ -1274,6 +1333,8 @@ type DataEntry struct {
 //            OfferEntry offer;
 //        case DATA:
 //            DataEntry data;
+//    	case ALIAS:
+//    		AliasEntry alias;
 //        }
 //
 type LedgerEntryData struct {
@@ -1282,6 +1343,7 @@ type LedgerEntryData struct {
 	TrustLine *TrustLineEntry
 	Offer     *OfferEntry
 	Data      *DataEntry
+	Alias     *AliasEntry
 }
 
 // SwitchFieldName returns the field name in which this union's
@@ -1302,6 +1364,8 @@ func (u LedgerEntryData) ArmForSwitch(sw int32) (string, bool) {
 		return "Offer", true
 	case LedgerEntryTypeData:
 		return "Data", true
+	case LedgerEntryTypeAlias:
+		return "Alias", true
 	}
 	return "-", false
 }
@@ -1338,6 +1402,13 @@ func NewLedgerEntryData(aType LedgerEntryType, value interface{}) (result Ledger
 			return
 		}
 		result.Data = &tv
+	case LedgerEntryTypeAlias:
+		tv, ok := value.(AliasEntry)
+		if !ok {
+			err = fmt.Errorf("invalid value, must be AliasEntry")
+			return
+		}
+		result.Alias = &tv
 	}
 	return
 }
@@ -1442,6 +1513,31 @@ func (u LedgerEntryData) GetData() (result DataEntry, ok bool) {
 	return
 }
 
+// MustAlias retrieves the Alias value from the union,
+// panicing if the value is not set.
+func (u LedgerEntryData) MustAlias() AliasEntry {
+	val, ok := u.GetAlias()
+
+	if !ok {
+		panic("arm Alias is not set")
+	}
+
+	return val
+}
+
+// GetAlias retrieves the Alias value from the union,
+// returning ok if the union's switch indicated the value is valid.
+func (u LedgerEntryData) GetAlias() (result AliasEntry, ok bool) {
+	armName, _ := u.ArmForSwitch(int32(u.Type))
+
+	if armName == "Alias" {
+		result = *u.Alias
+		ok = true
+	}
+
+	return
+}
+
 // LedgerEntryExt is an XDR NestedUnion defines as:
 //
 //   union switch (int v)
@@ -1496,6 +1592,8 @@ func NewLedgerEntryExt(v int32, value interface{}) (result LedgerEntryExt, err e
 //            OfferEntry offer;
 //        case DATA:
 //            DataEntry data;
+//    	case ALIAS:
+//    		AliasEntry alias;
 //        }
 //        data;
 //
@@ -1577,7 +1675,8 @@ type DecoratedSignature struct {
 //        ALLOW_TRUST = 7,
 //        ACCOUNT_MERGE = 8,
 //        INFLATION = 9,
-//        MANAGE_DATA = 10
+//        MANAGE_DATA = 10,
+//    	CREATE_ALIAS = 11
 //    };
 //
 type OperationType int32
@@ -1594,6 +1693,7 @@ const (
 	OperationTypeAccountMerge       OperationType = 8
 	OperationTypeInflation          OperationType = 9
 	OperationTypeManageData         OperationType = 10
+	OperationTypeCreateAlias        OperationType = 11
 )
 
 var operationTypeMap = map[int32]string{
@@ -1608,6 +1708,7 @@ var operationTypeMap = map[int32]string{
 	8:  "OperationTypeAccountMerge",
 	9:  "OperationTypeInflation",
 	10: "OperationTypeManageData",
+	11: "OperationTypeCreateAlias",
 }
 
 // ValidEnum validates a proposed value for this enum.  Implements
@@ -1634,6 +1735,18 @@ func (e OperationType) String() string {
 type CreateAccountOp struct {
 	Destination     AccountId
 	StartingBalance Int64
+}
+
+// CreateAliasOp is an XDR Struct defines as:
+//
+//   struct CreateAliasOp{
+//    	AccountID sourceId;
+//    	AccountID accountId; // alias id
+//    };
+//
+type CreateAliasOp struct {
+	SourceId  AccountId
+	AccountId AccountId
 }
 
 // PaymentOp is an XDR Struct defines as:
@@ -1939,6 +2052,8 @@ type ManageDataOp struct {
 //            void;
 //        case MANAGE_DATA:
 //            ManageDataOp manageDataOp;
+//    	case CREATE_ALIAS:
+//    		CreateAliasOp createAliasOp;
 //        }
 //
 type OperationBody struct {
@@ -1953,6 +2068,7 @@ type OperationBody struct {
 	AllowTrustOp         *AllowTrustOp
 	Destination          *AccountId
 	ManageDataOp         *ManageDataOp
+	CreateAliasOp        *CreateAliasOp
 }
 
 // SwitchFieldName returns the field name in which this union's
@@ -1987,6 +2103,8 @@ func (u OperationBody) ArmForSwitch(sw int32) (string, bool) {
 		return "", true
 	case OperationTypeManageData:
 		return "ManageDataOp", true
+	case OperationTypeCreateAlias:
+		return "CreateAliasOp", true
 	}
 	return "-", false
 }
@@ -2067,6 +2185,13 @@ func NewOperationBody(aType OperationType, value interface{}) (result OperationB
 			return
 		}
 		result.ManageDataOp = &tv
+	case OperationTypeCreateAlias:
+		tv, ok := value.(CreateAliasOp)
+		if !ok {
+			err = fmt.Errorf("invalid value, must be CreateAliasOp")
+			return
+		}
+		result.CreateAliasOp = &tv
 	}
 	return
 }
@@ -2321,6 +2446,31 @@ func (u OperationBody) GetManageDataOp() (result ManageDataOp, ok bool) {
 	return
 }
 
+// MustCreateAliasOp retrieves the CreateAliasOp value from the union,
+// panicing if the value is not set.
+func (u OperationBody) MustCreateAliasOp() CreateAliasOp {
+	val, ok := u.GetCreateAliasOp()
+
+	if !ok {
+		panic("arm CreateAliasOp is not set")
+	}
+
+	return val
+}
+
+// GetCreateAliasOp retrieves the CreateAliasOp value from the union,
+// returning ok if the union's switch indicated the value is valid.
+func (u OperationBody) GetCreateAliasOp() (result CreateAliasOp, ok bool) {
+	armName, _ := u.ArmForSwitch(int32(u.Type))
+
+	if armName == "CreateAliasOp" {
+		result = *u.CreateAliasOp
+		ok = true
+	}
+
+	return
+}
+
 // Operation is an XDR Struct defines as:
 //
 //   struct Operation
@@ -2354,6 +2504,8 @@ func (u OperationBody) GetManageDataOp() (result ManageDataOp, ok bool) {
 //            void;
 //        case MANAGE_DATA:
 //            ManageDataOp manageDataOp;
+//    	case CREATE_ALIAS:
+//    		CreateAliasOp createAliasOp;
 //        }
 //        body;
 //    };
@@ -2822,17 +2974,19 @@ type ClaimOfferAtom struct {
 //        CREATE_ACCOUNT_UNDERFUNDED = -2, // not enough funds in source account
 //        CREATE_ACCOUNT_LOW_RESERVE =
 //            -3, // would create an account below the min reserve
-//        CREATE_ACCOUNT_ALREADY_EXIST = -4 // account already exists
+//        CREATE_ACCOUNT_ALREADY_EXIST = -4, // account already exists
+//    	CREATE_ACCOUNT_ALREADY_EXIST_ALIAS = -5
 //    };
 //
 type CreateAccountResultCode int32
 
 const (
-	CreateAccountResultCodeCreateAccountSuccess      CreateAccountResultCode = 0
-	CreateAccountResultCodeCreateAccountMalformed    CreateAccountResultCode = -1
-	CreateAccountResultCodeCreateAccountUnderfunded  CreateAccountResultCode = -2
-	CreateAccountResultCodeCreateAccountLowReserve   CreateAccountResultCode = -3
-	CreateAccountResultCodeCreateAccountAlreadyExist CreateAccountResultCode = -4
+	CreateAccountResultCodeCreateAccountSuccess           CreateAccountResultCode = 0
+	CreateAccountResultCodeCreateAccountMalformed         CreateAccountResultCode = -1
+	CreateAccountResultCodeCreateAccountUnderfunded       CreateAccountResultCode = -2
+	CreateAccountResultCodeCreateAccountLowReserve        CreateAccountResultCode = -3
+	CreateAccountResultCodeCreateAccountAlreadyExist      CreateAccountResultCode = -4
+	CreateAccountResultCodeCreateAccountAlreadyExistAlias CreateAccountResultCode = -5
 )
 
 var createAccountResultCodeMap = map[int32]string{
@@ -2841,6 +2995,7 @@ var createAccountResultCodeMap = map[int32]string{
 	-2: "CreateAccountResultCodeCreateAccountUnderfunded",
 	-3: "CreateAccountResultCodeCreateAccountLowReserve",
 	-4: "CreateAccountResultCodeCreateAccountAlreadyExist",
+	-5: "CreateAccountResultCodeCreateAccountAlreadyExistAlias",
 }
 
 // ValidEnum validates a proposed value for this enum.  Implements
@@ -3905,6 +4060,104 @@ func (u AccountMergeResult) GetSourceAccountBalance() (result Int64, ok bool) {
 	return
 }
 
+// CreateAliasResultCode is an XDR Enum defines as:
+//
+//   enum CreateAliasResultCode
+//    {
+//        // codes considered as "success" for the operation
+//        CREATE_ALIAS_SUCCESS = 0, // account was created
+//
+//        // codes considered as "failure" for the operation
+//        CREATE_ALIAS_MALFORMED = -1,   // invalid destination
+//        CREATE_ALIAS_UNDERFUNDED = -2, // not enough funds in source account
+//        CREATE_ALIAS_LOW_RESERVE =
+//            -3, // would create an account below the min reserve
+//        CREATE_ALIAS_ALREADY_EXIST = -4, // account already exists
+//    	CREATE_ALIAS_ALREAY_EXIST_ACCOUNT = -5,
+//    	CREATE_ALIAS_NOT_OWNER = -6,
+//    	CREATE_ALIAS_UNDEFINED = -7
+//    };
+//
+type CreateAliasResultCode int32
+
+const (
+	CreateAliasResultCodeCreateAliasSuccess            CreateAliasResultCode = 0
+	CreateAliasResultCodeCreateAliasMalformed          CreateAliasResultCode = -1
+	CreateAliasResultCodeCreateAliasUnderfunded        CreateAliasResultCode = -2
+	CreateAliasResultCodeCreateAliasLowReserve         CreateAliasResultCode = -3
+	CreateAliasResultCodeCreateAliasAlreadyExist       CreateAliasResultCode = -4
+	CreateAliasResultCodeCreateAliasAlreayExistAccount CreateAliasResultCode = -5
+	CreateAliasResultCodeCreateAliasNotOwner           CreateAliasResultCode = -6
+	CreateAliasResultCodeCreateAliasUndefined          CreateAliasResultCode = -7
+)
+
+var createAliasResultCodeMap = map[int32]string{
+	0:  "CreateAliasResultCodeCreateAliasSuccess",
+	-1: "CreateAliasResultCodeCreateAliasMalformed",
+	-2: "CreateAliasResultCodeCreateAliasUnderfunded",
+	-3: "CreateAliasResultCodeCreateAliasLowReserve",
+	-4: "CreateAliasResultCodeCreateAliasAlreadyExist",
+	-5: "CreateAliasResultCodeCreateAliasAlreayExistAccount",
+	-6: "CreateAliasResultCodeCreateAliasNotOwner",
+	-7: "CreateAliasResultCodeCreateAliasUndefined",
+}
+
+// ValidEnum validates a proposed value for this enum.  Implements
+// the Enum interface for CreateAliasResultCode
+func (e CreateAliasResultCode) ValidEnum(v int32) bool {
+	_, ok := createAliasResultCodeMap[v]
+	return ok
+}
+
+// String returns the name of `e`
+func (e CreateAliasResultCode) String() string {
+	name, _ := createAliasResultCodeMap[int32(e)]
+	return name
+}
+
+// CreateAliasResult is an XDR Union defines as:
+//
+//   union CreateAliasResult switch (CreateAliasResultCode code)
+//    {
+//    case CREATE_ALIAS_SUCCESS:
+//        void;
+//    default:
+//        void;
+//    };
+//
+type CreateAliasResult struct {
+	Code CreateAliasResultCode
+}
+
+// SwitchFieldName returns the field name in which this union's
+// discriminant is stored
+func (u CreateAliasResult) SwitchFieldName() string {
+	return "Code"
+}
+
+// ArmForSwitch returns which field name should be used for storing
+// the value for an instance of CreateAliasResult
+func (u CreateAliasResult) ArmForSwitch(sw int32) (string, bool) {
+	switch CreateAliasResultCode(sw) {
+	case CreateAliasResultCodeCreateAliasSuccess:
+		return "", true
+	default:
+		return "", true
+	}
+}
+
+// NewCreateAliasResult creates a new  CreateAliasResult.
+func NewCreateAliasResult(code CreateAliasResultCode, value interface{}) (result CreateAliasResult, err error) {
+	result.Code = code
+	switch CreateAliasResultCode(code) {
+	case CreateAliasResultCodeCreateAliasSuccess:
+		// void
+	default:
+		// void
+	}
+	return
+}
+
 // InflationResultCode is an XDR Enum defines as:
 //
 //   enum InflationResultCode
@@ -4177,6 +4430,8 @@ func (e OperationResultCode) String() string {
 //            InflationResult inflationResult;
 //        case MANAGE_DATA:
 //            ManageDataResult manageDataResult;
+//    	case CREATE_ALIAS:
+//    		CreateAliasResult createAliasResult;
 //        }
 //
 type OperationResultTr struct {
@@ -4192,6 +4447,7 @@ type OperationResultTr struct {
 	AccountMergeResult       *AccountMergeResult
 	InflationResult          *InflationResult
 	ManageDataResult         *ManageDataResult
+	CreateAliasResult        *CreateAliasResult
 }
 
 // SwitchFieldName returns the field name in which this union's
@@ -4226,6 +4482,8 @@ func (u OperationResultTr) ArmForSwitch(sw int32) (string, bool) {
 		return "InflationResult", true
 	case OperationTypeManageData:
 		return "ManageDataResult", true
+	case OperationTypeCreateAlias:
+		return "CreateAliasResult", true
 	}
 	return "-", false
 }
@@ -4311,6 +4569,13 @@ func NewOperationResultTr(aType OperationType, value interface{}) (result Operat
 			return
 		}
 		result.ManageDataResult = &tv
+	case OperationTypeCreateAlias:
+		tv, ok := value.(CreateAliasResult)
+		if !ok {
+			err = fmt.Errorf("invalid value, must be CreateAliasResult")
+			return
+		}
+		result.CreateAliasResult = &tv
 	}
 	return
 }
@@ -4590,6 +4855,31 @@ func (u OperationResultTr) GetManageDataResult() (result ManageDataResult, ok bo
 	return
 }
 
+// MustCreateAliasResult retrieves the CreateAliasResult value from the union,
+// panicing if the value is not set.
+func (u OperationResultTr) MustCreateAliasResult() CreateAliasResult {
+	val, ok := u.GetCreateAliasResult()
+
+	if !ok {
+		panic("arm CreateAliasResult is not set")
+	}
+
+	return val
+}
+
+// GetCreateAliasResult retrieves the CreateAliasResult value from the union,
+// returning ok if the union's switch indicated the value is valid.
+func (u OperationResultTr) GetCreateAliasResult() (result CreateAliasResult, ok bool) {
+	armName, _ := u.ArmForSwitch(int32(u.Type))
+
+	if armName == "CreateAliasResult" {
+		result = *u.CreateAliasResult
+		ok = true
+	}
+
+	return
+}
+
 // OperationResult is an XDR Union defines as:
 //
 //   union OperationResult switch (OperationResultCode code)
@@ -4619,6 +4909,8 @@ func (u OperationResultTr) GetManageDataResult() (result ManageDataResult, ok bo
 //            InflationResult inflationResult;
 //        case MANAGE_DATA:
 //            ManageDataResult manageDataResult;
+//    	case CREATE_ALIAS:
+//    		CreateAliasResult createAliasResult;
 //        }
 //        tr;
 //    default:
@@ -5312,6 +5604,19 @@ type LedgerKeyData struct {
 	DataName  String64
 }
 
+// LedgerKeyAlias is an XDR NestedStruct defines as:
+//
+//   struct
+//    	{
+//    		AccountID accountSourceID;
+//    		AccountID accountID;
+//    	}
+//
+type LedgerKeyAlias struct {
+	AccountSourceId AccountId
+	AccountId       AccountId
+}
+
 // LedgerKey is an XDR Union defines as:
 //
 //   union LedgerKey switch (LedgerEntryType type)
@@ -5342,6 +5647,12 @@ type LedgerKeyData struct {
 //            AccountID accountID;
 //            string64 dataName;
 //        } data;
+//    case ALIAS:
+//    	struct
+//    	{
+//    		AccountID accountSourceID;
+//    		AccountID accountID;
+//    	} alias;
 //    };
 //
 type LedgerKey struct {
@@ -5350,6 +5661,7 @@ type LedgerKey struct {
 	TrustLine *LedgerKeyTrustLine
 	Offer     *LedgerKeyOffer
 	Data      *LedgerKeyData
+	Alias     *LedgerKeyAlias
 }
 
 // SwitchFieldName returns the field name in which this union's
@@ -5370,6 +5682,8 @@ func (u LedgerKey) ArmForSwitch(sw int32) (string, bool) {
 		return "Offer", true
 	case LedgerEntryTypeData:
 		return "Data", true
+	case LedgerEntryTypeAlias:
+		return "Alias", true
 	}
 	return "-", false
 }
@@ -5406,6 +5720,13 @@ func NewLedgerKey(aType LedgerEntryType, value interface{}) (result LedgerKey, e
 			return
 		}
 		result.Data = &tv
+	case LedgerEntryTypeAlias:
+		tv, ok := value.(LedgerKeyAlias)
+		if !ok {
+			err = fmt.Errorf("invalid value, must be LedgerKeyAlias")
+			return
+		}
+		result.Alias = &tv
 	}
 	return
 }
@@ -5504,6 +5825,31 @@ func (u LedgerKey) GetData() (result LedgerKeyData, ok bool) {
 
 	if armName == "Data" {
 		result = *u.Data
+		ok = true
+	}
+
+	return
+}
+
+// MustAlias retrieves the Alias value from the union,
+// panicing if the value is not set.
+func (u LedgerKey) MustAlias() LedgerKeyAlias {
+	val, ok := u.GetAlias()
+
+	if !ok {
+		panic("arm Alias is not set")
+	}
+
+	return val
+}
+
+// GetAlias retrieves the Alias value from the union,
+// returning ok if the union's switch indicated the value is valid.
+func (u LedgerKey) GetAlias() (result LedgerKeyAlias, ok bool) {
+	armName, _ := u.ArmForSwitch(int32(u.Type))
+
+	if armName == "Alias" {
+		result = *u.Alias
 		ok = true
 	}
 

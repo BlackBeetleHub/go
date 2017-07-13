@@ -2,137 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119441cb-8fc9-4d54-8f67-f578632e5d52" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/GOPATH__go_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGELOG.md" afterPath="$PROJECT_DIR$/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/address/main.go" afterPath="$PROJECT_DIR$/address/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/address/main_test.go" afterPath="$PROJECT_DIR$/address/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/amount/main.go" afterPath="$PROJECT_DIR$/amount/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/amount/main_test.go" afterPath="$PROJECT_DIR$/amount/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/account_merge.go" afterPath="$PROJECT_DIR$/build/account_merge.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/account_merge_test.go" afterPath="$PROJECT_DIR$/build/account_merge_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/allow_trust.go" afterPath="$PROJECT_DIR$/build/allow_trust.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/allow_trust_test.go" afterPath="$PROJECT_DIR$/build/allow_trust_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/change_trust.go" afterPath="$PROJECT_DIR$/build/change_trust.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/change_trust_test.go" afterPath="$PROJECT_DIR$/build/change_trust_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/create_account.go" afterPath="$PROJECT_DIR$/build/create_account.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/create_account_test.go" afterPath="$PROJECT_DIR$/build/create_account_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/inflation.go" afterPath="$PROJECT_DIR$/build/inflation.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/inflation_test.go" afterPath="$PROJECT_DIR$/build/inflation_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main.go" afterPath="$PROJECT_DIR$/build/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main_test.go" afterPath="$PROJECT_DIR$/build/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/manage_data.go" afterPath="$PROJECT_DIR$/build/manage_data.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/manage_data_test.go" afterPath="$PROJECT_DIR$/build/manage_data_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/manage_offer.go" afterPath="$PROJECT_DIR$/build/manage_offer.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/manage_offer_test.go" afterPath="$PROJECT_DIR$/build/manage_offer_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/operation.go" afterPath="$PROJECT_DIR$/build/operation.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/payment.go" afterPath="$PROJECT_DIR$/build/payment.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/payment_test.go" afterPath="$PROJECT_DIR$/build/payment_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/set_options.go" afterPath="$PROJECT_DIR$/build/set_options.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/set_options_test.go" afterPath="$PROJECT_DIR$/build/set_options_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/testing.go" afterPath="$PROJECT_DIR$/build/testing.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/transaction.go" afterPath="$PROJECT_DIR$/build/transaction.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/transaction_envelope.go" afterPath="$PROJECT_DIR$/build/transaction_envelope.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/transaction_envelope_test.go" afterPath="$PROJECT_DIR$/build/transaction_envelope_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/transaction_test.go" afterPath="$PROJECT_DIR$/build/transaction_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/util.go" afterPath="$PROJECT_DIR$/build/util.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/README.md" afterPath="$PROJECT_DIR$/clients/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/federation/client.go" afterPath="$PROJECT_DIR$/clients/federation/client.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/federation/client_test.go" afterPath="$PROJECT_DIR$/clients/federation/client_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/federation/main.go" afterPath="$PROJECT_DIR$/clients/federation/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/horizon/client.go" afterPath="$PROJECT_DIR$/clients/horizon/client.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/horizon/error.go" afterPath="$PROJECT_DIR$/clients/horizon/error.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/horizon/internal.go" afterPath="$PROJECT_DIR$/clients/horizon/internal.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/horizon/main.go" afterPath="$PROJECT_DIR$/clients/horizon/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/horizon/main_test.go" afterPath="$PROJECT_DIR$/clients/horizon/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/stellartoml/client.go" afterPath="$PROJECT_DIR$/clients/stellartoml/client.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clients/stellartoml/client_test.go" afterPath="$PROJECT_DIR$/clients/stellartoml/client_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/reference/examples.md" afterPath="$PROJECT_DIR$/docs/reference/examples.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/reference/readme.md" afterPath="$PROJECT_DIR$/docs/reference/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/build_transaction/main.go" afterPath="$PROJECT_DIR$/examples/build_transaction/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/submit_transaction/main.go" afterPath="$PROJECT_DIR$/examples/submit_transaction/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp/README.me" afterPath="$PROJECT_DIR$/exp/README.me" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glide.lock" afterPath="$PROJECT_DIR$/glide.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/glide.yaml" afterPath="$PROJECT_DIR$/glide.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/compliance/auth_handler.go" afterPath="$PROJECT_DIR$/handlers/compliance/auth_handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/compliance/callback_strategy.go" afterPath="$PROJECT_DIR$/handlers/compliance/callback_strategy.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/compliance/main.go" afterPath="$PROJECT_DIR$/handlers/compliance/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/federation/handler.go" afterPath="$PROJECT_DIR$/handlers/federation/handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/federation/handler_test.go" afterPath="$PROJECT_DIR$/handlers/federation/handler_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/federation/main.go" afterPath="$PROJECT_DIR$/handlers/federation/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/federation/reverse_sql_driver.go" afterPath="$PROJECT_DIR$/handlers/federation/reverse_sql_driver.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/federation/sql_driver.go" afterPath="$PROJECT_DIR$/handlers/federation/sql_driver.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hash/main_test.go" afterPath="$PROJECT_DIR$/hash/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keypair/from_address.go" afterPath="$PROJECT_DIR$/keypair/from_address.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keypair/full.go" afterPath="$PROJECT_DIR$/keypair/full.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keypair/main.go" afterPath="$PROJECT_DIR$/keypair/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keypair/main_test.go" afterPath="$PROJECT_DIR$/keypair/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_test.go" afterPath="$PROJECT_DIR$/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meta/bundle.go" afterPath="$PROJECT_DIR$/meta/bundle.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meta/bundle_test.go" afterPath="$PROJECT_DIR$/meta/bundle_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meta/main.go" afterPath="$PROJECT_DIR$/meta/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/main.go" afterPath="$PROJECT_DIR$/network/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/main_test.go" afterPath="$PROJECT_DIR$/network/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/price/main.go" afterPath="$PROJECT_DIR$/price/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/price/main_test.go" afterPath="$PROJECT_DIR$/price/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/compliance/auth_data.go" afterPath="$PROJECT_DIR$/protocols/compliance/auth_data.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/compliance/auth_request.go" afterPath="$PROJECT_DIR$/protocols/compliance/auth_request.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/compliance/auth_request_test.go" afterPath="$PROJECT_DIR$/protocols/compliance/auth_request_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protocols/compliance/validator.go" afterPath="$PROJECT_DIR$/protocols/compliance/validator.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/README.md" afterPath="$PROJECT_DIR$/services/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/compliance/main.go" afterPath="$PROJECT_DIR$/services/compliance/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/federation/CHANGELOG.md" afterPath="$PROJECT_DIR$/services/federation/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/federation/README.md" afterPath="$PROJECT_DIR$/services/federation/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/federation/main.go" afterPath="$PROJECT_DIR$/services/federation/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/strkey/main.go" afterPath="$PROJECT_DIR$/strkey/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/app/main.go" afterPath="$PROJECT_DIR$/support/app/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/config/main.go" afterPath="$PROJECT_DIR$/support/config/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/dbtest/db.go" afterPath="$PROJECT_DIR$/support/db/dbtest/db.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/dbtest/main.go" afterPath="$PROJECT_DIR$/support/db/dbtest/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/delete_builder_test.go" afterPath="$PROJECT_DIR$/support/db/delete_builder_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/get_builder.go" afterPath="$PROJECT_DIR$/support/db/get_builder.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/get_builder_test.go" afterPath="$PROJECT_DIR$/support/db/get_builder_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/insert_builder_test.go" afterPath="$PROJECT_DIR$/support/db/insert_builder_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/main.go" afterPath="$PROJECT_DIR$/support/db/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/main_test.go" afterPath="$PROJECT_DIR$/support/db/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/select_builder.go" afterPath="$PROJECT_DIR$/support/db/select_builder.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/select_builder_test.go" afterPath="$PROJECT_DIR$/support/db/select_builder_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/session.go" afterPath="$PROJECT_DIR$/support/db/session.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/session_test.go" afterPath="$PROJECT_DIR$/support/db/session_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/db/update_builder.go" afterPath="$PROJECT_DIR$/support/db/update_builder.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/http/httptest/client_expectation.go" afterPath="$PROJECT_DIR$/support/http/httptest/client_expectation.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/http/main.go" afterPath="$PROJECT_DIR$/support/http/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/log/entry.go" afterPath="$PROJECT_DIR$/support/log/entry.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/log/internal.go" afterPath="$PROJECT_DIR$/support/log/internal.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/log/main.go" afterPath="$PROJECT_DIR$/support/log/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/log/main_test.go" afterPath="$PROJECT_DIR$/support/log/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/support/scripts/build_release_artifacts/main.go" afterPath="$PROJECT_DIR$/support/scripts/build_release_artifacts/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/CHANGELOG.md" afterPath="$PROJECT_DIR$/tools/stellar-archivist/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/README.md" afterPath="$PROJECT_DIR$/tools/stellar-archivist/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/internal/archive_test.go" afterPath="$PROJECT_DIR$/tools/stellar-archivist/internal/archive_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/internal/json.go" afterPath="$PROJECT_DIR$/tools/stellar-archivist/internal/json.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/internal/verify.go" afterPath="$PROJECT_DIR$/tools/stellar-archivist/internal/verify.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/internal/xdrstream.go" afterPath="$PROJECT_DIR$/tools/stellar-archivist/internal/xdrstream.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-archivist/main.go" afterPath="$PROJECT_DIR$/tools/stellar-archivist/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-sign/CHANGELOG.md" afterPath="$PROJECT_DIR$/tools/stellar-sign/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-sign/README.md" afterPath="$PROJECT_DIR$/tools/stellar-sign/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-sign/main.go" afterPath="$PROJECT_DIR$/tools/stellar-sign/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-vanity-gen/CHANGELOG.md" afterPath="$PROJECT_DIR$/tools/stellar-vanity-gen/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-vanity-gen/README.md" afterPath="$PROJECT_DIR$/tools/stellar-vanity-gen/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/stellar-vanity-gen/main.go" afterPath="$PROJECT_DIR$/tools/stellar-vanity-gen/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/account_entry_test.go" afterPath="$PROJECT_DIR$/xdr/account_entry_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/account_id.go" afterPath="$PROJECT_DIR$/xdr/account_id.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/account_id_test.go" afterPath="$PROJECT_DIR$/xdr/account_id_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/allow_trust_op_asset_test.go" afterPath="$PROJECT_DIR$/xdr/allow_trust_op_asset_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/asset.go" afterPath="$PROJECT_DIR$/xdr/asset.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/asset_test.go" afterPath="$PROJECT_DIR$/xdr/asset_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/db_test.go" afterPath="$PROJECT_DIR$/xdr/db_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/main_test.go" afterPath="$PROJECT_DIR$/xdr/main_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/price_test.go" afterPath="$PROJECT_DIR$/xdr/price_test.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/signer_key.go" afterPath="$PROJECT_DIR$/xdr/signer_key.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/signer_key_test.go" afterPath="$PROJECT_DIR$/xdr/signer_key_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/Stellar-ledger-entries.x" afterPath="$PROJECT_DIR$/xdr/Stellar-ledger-entries.x" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/Stellar-ledger.x" afterPath="$PROJECT_DIR$/xdr/Stellar-ledger.x" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/Stellar-transaction.x" afterPath="$PROJECT_DIR$/xdr/Stellar-transaction.x" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdr/xdr_generated.go" afterPath="$PROJECT_DIR$/xdr/xdr_generated.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -147,7 +21,7 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/address/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="136">
               <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="e#218#331#0" expanded="true" />
@@ -160,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/doc.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/xdr/asset.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="86">
-              <caret line="134" column="40" lean-forward="true" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+              <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
               <folding>
                 <element signature="e#13#91#0" expanded="true" />
               </folding>
@@ -228,10 +102,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
-    <option name="y" value="89" />
-    <option name="width" value="1378" />
-    <option name="height" value="780" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -248,7 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,7 +165,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,19 +187,18 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="89" width="1378" height="780" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1761194" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17507419" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -350,49 +223,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/address/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#218#331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/transaction_envelope_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/transaction_envelope_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/address/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="136">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="e#218#331#0" expanded="true" />
@@ -410,8 +241,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xdr/asset.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
+        <state relative-caret-position="2278">
           <caret line="134" column="40" lean-forward="true" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+          <folding>
+            <element signature="e#13#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/address/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#218#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/transaction_envelope_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/transaction_envelope_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/address/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#218#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xdr/asset.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
           <folding>
             <element signature="e#13#91#0" expanded="true" />
           </folding>
