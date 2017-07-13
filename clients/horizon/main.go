@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/stellar/go/build"
-	"github.com/stellar/go/support/errors"
+	"github.com/BlackBeetleHub/go/build"
+	"github.com/BlackBeetleHub/go/support/errors"
 	"golang.org/x/net/context"
 )
 

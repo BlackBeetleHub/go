@@ -11,10 +11,10 @@ package build
 import (
 	"math"
 
-	"github.com/stellar/go/amount"
-	"github.com/stellar/go/network"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/xdr"
+	"github.com/BlackBeetleHub/go/amount"
+	"github.com/BlackBeetleHub/go/network"
+	"github.com/BlackBeetleHub/go/support/errors"
+	"github.com/BlackBeetleHub/go/xdr"
 )
 
 const (
