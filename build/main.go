@@ -127,6 +127,13 @@ type Destination struct {
 	AddressOrSeed string
 }
 
+type AliasID struct {
+	Address string
+}
+
+type Source struct {
+	 Address string
+}
 // InflationDest is a mutator capable of setting the inflation destination
 type InflationDest string
 
