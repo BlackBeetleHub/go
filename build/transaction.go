@@ -149,19 +149,6 @@ func (m CreateAccountBuilder) MutateTransaction(o *TransactionBuilder) error {
 	return m.Err
 }
 
-// MutateTransaction for CreateAliasBuilder causes the underylying
-// CreateAliasOp to be added to the operation list for the provided
-// transaction
-func (m CreateAliasBuilder) MutateTransaction(o *TransactionBuilder) error {
-	if m.Err != nil {
-		return m.Err
-	}
-
-	m.O.Body, m.Err = xdr.NewOperationBody(xdr.OperationTypeCreateAlias, m.CAL)
-	o.TX.Operations = append(o.TX.Operations, m.O)
-	return m.Err
-}
-
 // MutateTransaction for Defaults sets reasonable defaults on the transaction being built
 func (m Defaults) MutateTransaction(o *TransactionBuilder) error {
 
