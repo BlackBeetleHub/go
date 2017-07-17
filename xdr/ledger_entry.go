@@ -33,8 +33,8 @@ func (entry *LedgerEntry) LedgerKey() LedgerKey {
 	case LedgerEntryTypeAlias:
 		alias := entry.Data.MustAlias()
 		body = LedgerKeyAlias {
-			AccountSourceId: alias.AccountSourceId,
 			AccountId: alias.AccountId,
+			AliasId: alias.AliasId,
 		}
 	default:
 		panic(fmt.Errorf("Unknown entry type: %v", entry.Data.Type))
