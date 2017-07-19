@@ -30,6 +30,10 @@ func (key *LedgerKey) Equals(other LedgerKey) bool {
 		l := key.MustTrustLine()
 		r := other.MustTrustLine()
 		return l.AccountId.Equals(r.AccountId) && l.Asset.Equals(r.Asset)
+	case LedgerEntryTypeAlias:
+		l := key.MustAlias()
+		r := other.MustAlias()
+		return l.AccountId.Equals(r.AccountId) && l.AliasId.Equals(r.AliasId)
 	default:
 		panic(fmt.Errorf("Unknown ledger key type: %v", key.Type))
 	}
@@ -85,3 +89,18 @@ func (key *LedgerKey) SetTrustline(account AccountId, line Asset) error {
 	*key = nkey
 	return nil
 }
+
+
+// SetAlias mutates `key` such that it represents the identity of the
+// alias owned by `account` and for `source`.
+func (key *LedgerKey) SetAlias(aliasID AccountId, accountID AccountId) error {
+	data := LedgerKeyAlias{accountID, aliasID}
+	nkey, err := NewLedgerKey(LedgerEntryTypeAlias, data)
+	if err != nil {
+		return err
+	}
+
+	*key = nkey
+	return nil
+}
+

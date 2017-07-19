@@ -10,7 +10,7 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/stellar/go/xdr"
+	"github.com/BlackBeetleHub/go/xdr"
 )
 
 // Parse  calculates and returns the best rational approximation of the given

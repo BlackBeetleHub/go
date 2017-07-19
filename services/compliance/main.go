@@ -9,13 +9,13 @@ import (
 
 	"github.com/rs/cors"
 	"github.com/spf13/cobra"
-	complianceHandler "github.com/stellar/go/handlers/compliance"
-	complianceProtocol "github.com/stellar/go/protocols/compliance"
-	"github.com/stellar/go/support/app"
-	"github.com/stellar/go/support/config"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/support/http"
-	"github.com/stellar/go/support/log"
+	complianceHandler "github.com/BlackBeetleHub/go/handlers/compliance"
+	complianceProtocol "github.com/BlackBeetleHub/go/protocols/compliance"
+	"github.com/BlackBeetleHub/go/support/app"
+	"github.com/BlackBeetleHub/go/support/config"
+	"github.com/BlackBeetleHub/go/support/errors"
+	"github.com/BlackBeetleHub/go/support/http"
+	"github.com/BlackBeetleHub/go/support/log"
 )
 
 // Config represents the configuration of a federation server

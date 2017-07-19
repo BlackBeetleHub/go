@@ -1,7 +1,7 @@
 package build
 
 import (
-	"github.com/stellar/go/xdr"
+	"github.com/BlackBeetleHub/go/xdr"
 )
 
 // OperationMutator is a interface that wraps the MutateOperation operation.
